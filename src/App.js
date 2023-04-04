@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import styles from './style';
 
-function App() {
+import {
+  Navbar, Home, Stats, Classes, Courses, Testimonial, Faq, Footer, AboutUs, Community
+} from './components';
+
+
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className='bg-primary w-full overflow-hidden'>
+      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Navbar />
+          <Home />
+        </div>
+      </div>
 
-export default App;
+      <div className={`${styles.paddingX} ${styles.flexStart} bg-[#CCDBF0]`}>
+        <div className={`${styles.boxWidth}`}>
+          <Stats />
+        </div>
+      </div>
+
+      <div className={`${styles.paddingX} ${styles.flexStart} bg-[#F8F9FC] pt-10`}>
+        <div className={`${styles.boxWidth}`}>
+          <Classes />
+          <AboutUs />
+          <Courses />
+        </div>
+      </div>
+
+      <div className={` bg-[#F8F9FC] pt-10`}>
+        <div>
+          <Testimonial />
+        </div>
+      </div>
+
+      <div className={`${styles.paddingX} ${styles.flexStart} image_background mt-20`}>
+        <div className={`${styles.boxWidth}`}>
+          <Community />
+        </div>
+      </div>
+
+      <div className={`${styles.paddingX} ${styles.flexStart} bg-[#F8F9FC] pt-10 pb-20`}>
+        <div className={`${styles.boxWidth}`}>
+          <Faq />
+        </div>
+      </div>
+
+      <div className={`${styles.paddingX} ${styles.flexStart} bg-[#000F24] pt-10`}>
+        <div className={`${styles.boxWidth}`}>
+          <Footer />
+        </div>
+      </div>
+    </div>
+  )
+}
